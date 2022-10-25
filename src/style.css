@@ -1,6 +1,22 @@
 * {
   font-family: Arial, sans-serif;
-  color: black;
+}
+  
+.main-items {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 30px;
+  font-size: 30px;
+  list-style-type: none;
+}
+
+header {
+  background: rgba(6, 1, 66, 0.852);
+  color: white;
+}
+
+header nav ul li {
+  color: white;
 }
 
 footer p {
