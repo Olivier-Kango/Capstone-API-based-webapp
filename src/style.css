@@ -1,3 +1,15 @@
 * {
+  font-family: Arial, sans-serif;
   color: black;
+}
+
+footer p {
+  color: white;
+  vertical-align: middle;
+  background: rgba(6, 1, 66, 0.852);
+  padding: 30px 30px;
+}
+
+footer p a {
+  color: rgb(255, 255, 255);
 }
