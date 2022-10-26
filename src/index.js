@@ -1,4 +1,6 @@
 import './style.css';
+import popupComment from './modules/popup-comments.js';
+import './favicon.ico';
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=b';
 
@@ -25,7 +27,6 @@ fetch(url)
       title.classList = 'title';
 
       const like = document.createElement('div');
-      like.innerHTML = '<i class="fa-regular fa-heart"></i>';
       like.className = 'likeButton';
 
       const box = document.createElement('div');
@@ -37,10 +38,13 @@ fetch(url)
       commentButton.classList = 'commentButton';
       commentButton.id = item.idMeal;
 
-      const reservationButton = document.createElement('button');
-      reservationButton.innerText = 'Reservation';
-
-      container.append(image, box, id, commentButton, reservationButton);
+      container.append(image, box, id, commentButton);
       section.append(container);
+
+      commentButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        popupComment();
+        // popupComment().modal.appendChild()
+      });
     });
   });

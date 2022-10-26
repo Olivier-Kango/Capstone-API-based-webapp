@@ -11,7 +11,7 @@ body {
 .first_flex {
   display: flex;
   justify-content: space-around;
-  padding: 20px 0;
+  padding: 0;
   font-size: 20px;
   list-style-type: none;
 }
@@ -21,21 +21,36 @@ body {
 }
 
 header {
-  background: rgba(66, 40, 1, 0.852);
+  background: #421c0dda;
   color: white;
+  top: 0;
   margin: 0;
   width: 100%;
 }
 
 header nav ul li {
   color: white;
+  padding: 30px 0;
+}
+
+header nav ul li:nth-child(1) {
+  font-size: 50px;
+  padding: 0;
+  margin: 0;
+  height: min-content;
+  margin-bottom: 10px;
+}
+
+header nav ul li:hover {
+  color: yellow;
+  cursor: pointer;
 }
 
 footer p {
+  margin: 0;
   color: white;
   vertical-align: middle;
-  background: rgba(66, 40, 1, 0.852);
-  padding: 25px 40px;
+  padding: 20px 40px;
 }
 
 footer p a {
@@ -49,6 +64,7 @@ body {
 
 ul {
   padding: 0;
+  margin: 0;
   margin-bottom: 50px;
 }
 
@@ -57,8 +73,11 @@ nav {
 }
 
 footer {
+  background: #421c0dda;
+  bottom: 0;
   text-align: center;
-  margin: 0;
+  margin-top: 40px;
+  width: 100%;
 }
 
 .food-items {
@@ -83,6 +102,8 @@ footer {
 .title {
   font-size: 20px;
   padding: 10px;
+  font-weight: bold;
+  margin-right: 15px;
 }
 
 button {
@@ -113,4 +134,118 @@ button {
     width: 24vw;
     width: 365px;
   }
+}
+
+/* POPUP */
+#overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(30px);
+  background: rgba(66, 40, 1, 0.852);
+  pointer-events: none;
+  z-index: 2;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid #fff;
+  border-radius: 10px;
+  z-index: 4;
+  background: rgba(255, 255, 255, 0.703);
+  width: 80%;
+  padding: 10px 40px;
+}
+
+#modal.active {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  color: rgba(66, 40, 1, 0.852);
+  font-size: 50px;
+  float: right;
+  margin: 0;
+}
+
+.commentButton {
+  cursor: pointer;
+  border: 2px solid #421c0d82;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.commentButton:hover {
+  background: rgba(228, 169, 126, 0.658);
+  box-shadow: 3px 3px 0 0;
+}
+
+/* LIKE BUTTON */
+.likeButton {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background-color: rgb(255, 255, 255);
+}
+
+.likeButton::before,
+.likeButton::after {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  content: '';
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+}
+
+.likeButton::before {
+  bottom: 0;
+  left: -10px;
+}
+
+.likeButton::after {
+  top: -10px;
+  right: 0;
+}
+
+.likeButton:hover,
+.likeButton:hover::before,
+.likeButton:hover::after {
+  cursor: pointer;
+  background: rgb(255, 255, 0);
+}
+
+.likeButton:active,
+.likeButton:active::before,
+.likeButton:active::after {
+  cursor: pointer;
+  background: rgb(255, 0, 0);
+}
+
+.container {
+  z-index: -1;
 }
