@@ -5,7 +5,7 @@
 .main-items {
   display: flex;
   justify-content: space-around;
-  padding: 30px 30px;
+  padding: 20px 0;
   font-size: 30px;
   list-style-type: none;
 }
@@ -23,7 +23,7 @@ footer p {
   color: white;
   vertical-align: middle;
   background: rgba(6, 1, 66, 0.852);
-  padding: 30px 30px;
+  padding: 30px 40px;
 }
 
 footer p a {
