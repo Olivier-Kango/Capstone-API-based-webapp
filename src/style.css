@@ -102,6 +102,10 @@ button {
   align-items: center;
   height: 60px;
 }
+.likes {
+  font-size: 16px;
+  color: darkslategray;
+}
 
 @media only screen and (min-width: 768px) {
   .food-items {
@@ -114,3 +118,6 @@ button {
     width: 365px;
   }
 }
+
+
+

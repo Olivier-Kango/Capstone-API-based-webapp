@@ -1,8 +1,31 @@
-import './style.css';
 
-const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=b';
+  import './style.css';
 
+
+const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=e';
+const url2 = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/wIvcfoeCMowsKdAOdXJy/likes/';
 const section = document.querySelector('.food-items');
+
+const displayLikes = (arr) => {
+  const ids = document.querySelectorAll('.dont_display');
+  arr.forEach((element) => {
+    ids.forEach((id) => {
+      if ((element.item_id) === Number((id.innerText))) {
+        const likeContent = document.createElement('div');
+        likeContent.innerText = `${element.likes} likes`;
+        likeContent.className = 'likes';
+        const y = id.parentElement;
+        y.insertBefore(likeContent, id);
+      }
+    });
+  });
+};
+
+const getData = () => {
+  fetch(url2)
+    .then((response) => response.json())
+    .then((data) => displayLikes(data));
+};
 
 fetch(url)
   .then((response) => response.json())
@@ -34,7 +57,7 @@ fetch(url)
 
       const commentButton = document.createElement('button');
       commentButton.innerText = 'Comment';
-      commentButton.classList = 'commentButton';
+      commentButton.classList = 'commButton';
       commentButton.id = item.idMeal;
 
       const reservationButton = document.createElement('button');
@@ -43,4 +66,34 @@ fetch(url)
       container.append(image, box, id, commentButton, reservationButton);
       section.append(container);
     });
-  });
+
+    
+
+    const likeButton = Array.from(document.querySelectorAll('.likeButton'));
+    likeButton.forEach((item) => {
+      item.addEventListener('click', () => {
+        let likeNumber = parseInt(item.parentElement.nextElementSibling.innerText, 12);
+        const index = Number(item.parentElement.nextElementSibling.nextElementSibling.innerText);
+        const object = {
+          item_id: index,
+          likes: likeNumber,
+        };
+        fetch(url2, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(object),
+        });
+        likeNumber += 1;
+        item.parentElement.nextElementSibling.innerText = `${likeNumber} likes`;
+        item.innerHTML = '<i class="fa-solid fa-heart"></i>';
+      }, { once: true });
+    });
+
+    
+  })
+  .then(getData());
+
+
+  
+
+ 
