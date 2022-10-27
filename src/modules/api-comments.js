@@ -34,6 +34,8 @@ const commentsFromApi = async (idElement) => {
   const instructionTitle = document.createElement('h3');
 
   const instruction = document.createElement('p');
+  instruction.setAttribute('class', 'comments');
+  instruction.textContent = item.strInstructions;
 
   const commentsTitle = document.createElement('h3');
 

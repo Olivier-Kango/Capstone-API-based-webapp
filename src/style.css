@@ -271,3 +271,7 @@ button {
   color: rgb(110, 54, 14);
   font-size: 40px;
 }
+
+.comments {
+  text-align: justify;
+}
