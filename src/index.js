@@ -1,5 +1,6 @@
 import './style.css';
 import popupComment from './modules/popup-comments.js';
+import commentsFromApi from './modules/api-comments.js';
 import './favicon.ico';
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=b';
@@ -41,10 +42,10 @@ fetch(url)
       container.append(image, box, id, commentButton);
       section.append(container);
 
-      commentButton.addEventListener('click', (e) => {
-        e.preventDefault();
+      commentButton.addEventListener('click', () => {
+        document.querySelector('body').style.overflow = 'hidden';
         popupComment();
-        // popupComment().modal.appendChild()
+        commentsFromApi(item.idMeal);
       });
     });
   });
