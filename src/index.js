@@ -88,7 +88,6 @@ fetch(url)
         });
         likeNumber += 1;
         item.parentElement.nextElementSibling.innerText = `${likeNumber} likes`;
-        item.innerHTML = '<i class="fa-solid fa-heart"></i>';
       }, { once: true });
     });
     const containerz = Array.from(document.querySelectorAll('.main-container'));
