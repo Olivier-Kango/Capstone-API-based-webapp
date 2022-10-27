@@ -43,6 +43,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.19.6",
     "lodash": "^4.17.21"
   }
 }
