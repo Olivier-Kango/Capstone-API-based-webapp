@@ -42,6 +42,11 @@ header nav ul li {
   font-size: 20px;
 }
 
+ul.comments li {
+  list-style: none;
+  padding: 10px 40px;
+}
+
 header nav ul li:nth-child(1) {
   font-size: 50px;
   padding: 0;
@@ -173,7 +178,6 @@ button {
   transform: translate(-50%, -50%) scale(0);
   transition: 200ms ease-in-out;
   border: 1px solid #fff;
-  border-radius: 10px;
   z-index: 4;
   background: rgba(255, 255, 255, 0.703);
   width: 85%;
@@ -284,4 +288,48 @@ button {
 .title-comments {
   text-align: center;
   font-size: 30px;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 20%;
+}
+
+.username-input,
+.comments-input {
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+}
+
+.comments-input {
+  margin: 0;
+  height: 100px;
+}
+
+.username-input:focus,
+.comments-input:focus {
+  outline: none;
+  border: none;
+}
+
+.btn-add-comments {
+  padding: 15px 20px;
+  border: none;
+  margin-bottom: 30px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-add-comments:hover {
+  background: rgba(245, 191, 152, 0.436);
+  box-shadow: 3px 3px 0 0;
+}
+
+.btn-add-comments:active {
+  background: rgba(210, 140, 89, 0.756);
+  box-shadow: 3px 3px 0 0;
 }

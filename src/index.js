@@ -3,7 +3,7 @@ import popupComment from './modules/popup-comments.js';
 import commentsFromApi from './modules/api-comments.js';
 import './favicon.ico';
 
-const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=b';
+const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=e';
 
 const section = document.querySelector('.food-items');
 
