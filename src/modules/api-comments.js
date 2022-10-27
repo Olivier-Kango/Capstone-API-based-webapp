@@ -33,15 +33,18 @@ const commentsFromApi = async (idElement) => {
 
   const instructionTitle = document.createElement('h3');
   instructionTitle.innerText = 'Instructions';
-  instructionTitle.setAttribute('class', 'title-comments')
+  instructionTitle.setAttribute('class', 'title-comments');
 
   const instruction = document.createElement('p');
   instruction.setAttribute('class', 'comments');
   instruction.textContent = item.strInstructions;
 
   const commentsTitle = document.createElement('h3');
+  commentsTitle.setAttribute('class', 'title-comments');
+  commentsTitle.innerText = 'Comments';
 
   const comments = document.createElement('p');
+  comments.setAttribute('class', 'comments');
 
   ul.append(idMeal, category, origin);
   section.append(name, ul, instructionTitle, instruction, commentsTitle, comments);
