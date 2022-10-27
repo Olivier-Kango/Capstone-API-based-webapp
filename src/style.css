@@ -39,6 +39,7 @@ header nav ul li {
 
 .identification-ul li {
   list-style: none;
+  font-size: 20px;
 }
 
 header nav ul li:nth-child(1) {
@@ -274,4 +275,9 @@ button {
 
 .comments {
   text-align: justify;
+}
+
+.title-comments {
+  text-align: center;
+  font-size: 30px;
 }

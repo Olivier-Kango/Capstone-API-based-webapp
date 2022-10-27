@@ -32,6 +32,8 @@ const commentsFromApi = async (idElement) => {
   origin.innerHTML = `<strong>Area: </strong>${item.strArea}`;
 
   const instructionTitle = document.createElement('h3');
+  instructionTitle.innerText = 'Instructions';
+  instructionTitle.setAttribute('class', 'title-comments')
 
   const instruction = document.createElement('p');
   instruction.setAttribute('class', 'comments');
