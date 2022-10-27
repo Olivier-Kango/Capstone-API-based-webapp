@@ -1,15 +1,12 @@
-
 import './style.css';
 import popupComment from './modules/popup-comments.js';
 import commentsFromApi from './modules/api-comments.js';
+import counter from './modules/counter.js';
 import './favicon.ico';
 
-
- 
-
-
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=e';
-const url2 = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/wIvcfoeCMowsKdAOdXJy/likes/';
+// const url2 = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/EJtY0hlTmqQDHXVRck8E/likes/';
+const url2 = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/wIvcfoeCMowsKdAOdXJy/likes/'
 const section = document.querySelector('.food-items');
 
 const displayLikes = (arr) => {
@@ -75,13 +72,10 @@ fetch(url)
       });
     });
 
-
-    
-
     const likeButton = Array.from(document.querySelectorAll('.likeButton'));
     likeButton.forEach((item) => {
       item.addEventListener('click', () => {
-        let likeNumber = parseInt(item.parentElement.nextElementSibling.innerText, 12);
+        let likeNumber = parseInt(item.parentElement.nextElementSibling.innerText, 10);
         const index = Number(item.parentElement.nextElementSibling.nextElementSibling.innerText);
         const object = {
           item_id: index,
@@ -97,15 +91,8 @@ fetch(url)
         item.innerHTML = '<i class="fa-solid fa-heart"></i>';
       }, { once: true });
     });
-
-    
+    const containerz = Array.from(document.querySelectorAll('.main-container'));
+    const meals = document.querySelector('.meals');
+    meals.innerText = `${counter(containerz)} Meals`;
   })
   .then(getData());
-
-
-  
-
- 
-
-  });
-
