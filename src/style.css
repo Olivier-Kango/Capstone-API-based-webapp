@@ -138,6 +138,12 @@ button {
   height: 60px;
 }
 
+.likes {
+  font-size: 16px;
+  color: darkslategray;
+  margin-bottom: 10px;
+}
+
 @media only screen and (min-width: 768px) {
   .food-items {
     grid-template-columns: 1fr 1fr 1fr;
