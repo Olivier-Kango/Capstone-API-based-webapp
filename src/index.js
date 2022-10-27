@@ -3,8 +3,10 @@ import popupComment from './modules/popup-comments.js';
 import commentsFromApi from './modules/api-comments.js';
 import counter from './modules/counter.js';
 import './favicon.ico';
+import select, { selectAlphabet } from './modules/select-alphabet.js';
 
-const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=e';
+const selected = select.options[localStorage.getItem('selected')].text;
+const url = `https://www.themealdb.com/api/json/v1/1/search.php?f=${selected}`;
 const url2 = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/wIvcfoeCMowsKdAOdXJy/likes/';
 const section = document.querySelector('.food-items');
 
@@ -94,3 +96,10 @@ fetch(url)
     meals.innerText = `${counter(containerz)} Meals`;
   })
   .then(getData());
+
+select.addEventListener('change', selectAlphabet);
+if (localStorage.getItem('selected')) {
+  document.getElementById(localStorage.getItem('selected')).selected = true;
+}
+
+console.log(selected);
