@@ -1,11 +1,33 @@
 import './style.css';
 import popupComment from './modules/popup-comments.js';
 import commentsFromApi from './modules/api-comments.js';
+import counter from './modules/counter.js';
 import './favicon.ico';
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=e';
-
+const url2 = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/wIvcfoeCMowsKdAOdXJy/likes/';
 const section = document.querySelector('.food-items');
+
+const displayLikes = (arr) => {
+  const ids = document.querySelectorAll('.dont_display');
+  arr.forEach((element) => {
+    ids.forEach((id) => {
+      if ((element.item_id) === Number((id.innerText))) {
+        const likeContent = document.createElement('div');
+        likeContent.innerText = `${element.likes} likes`;
+        likeContent.className = 'likes';
+        const y = id.parentElement;
+        y.insertBefore(likeContent, id);
+      }
+    });
+  });
+};
+
+const getData = () => {
+  fetch(url2)
+    .then((response) => response.json())
+    .then((data) => displayLikes(data));
+};
 
 fetch(url)
   .then((response) => response.json())
@@ -48,4 +70,27 @@ fetch(url)
         commentsFromApi(item.idMeal);
       });
     });
-  });
+
+    const likeButton = Array.from(document.querySelectorAll('.likeButton'));
+    likeButton.forEach((item) => {
+      item.addEventListener('click', () => {
+        let likeNumber = parseInt(item.parentElement.nextElementSibling.innerText, 10);
+        const index = Number(item.parentElement.nextElementSibling.nextElementSibling.innerText);
+        const object = {
+          item_id: index,
+          likes: likeNumber,
+        };
+        fetch(url2, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(object),
+        });
+        likeNumber += 1;
+        item.parentElement.nextElementSibling.innerText = `${likeNumber} likes`;
+      }, { once: true });
+    });
+    const containerz = Array.from(document.querySelectorAll('.main-container'));
+    const meals = document.querySelector('.meals');
+    meals.innerText = `${counter(containerz)} Meals`;
+  })
+  .then(getData());

@@ -6,6 +6,13 @@
 
 ## Screen Short
 
+### Home page
+
+<img width="941" alt="home page" src="https://user-images.githubusercontent.com/108806646/198336577-b50aa929-f67b-4ea3-afb3-3f420f501426.png">
+
+### Popup
+<img width="855" alt="popup" src="https://user-images.githubusercontent.com/108806646/198336626-0f066ae7-682e-4841-a4b9-2c0b55ab3f82.png">
+
 ## Built With
 
 - Languages: HTML, CSS, JavaScript
@@ -13,12 +20,13 @@
 
 ## Live Demo
 
-[Live demo link](https://)
+[Live demo link](https://capstone-api.netlify.app/)
 
 To get a local copy up and running follow these simple example steps.
 
-## Getting Started
+## Video for explanation
 
+[<img width="942" alt="video capstone" src="https://user-images.githubusercontent.com/108806646/198344876-3e952dd9-585e-42bf-a5f5-920d219d2df9.png">](https://youtu.be/N22XlhllKkM)
 
 ### Prerequisites
 
@@ -53,7 +61,7 @@ To run this app on your local computer you need the browser (Google Chrome is th
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://).
+Feel free to check the [issues page](https://github.com/Olivier-Kango/Capstone-API-based-webapp/issues/new).
 
 ## Show your support
 
