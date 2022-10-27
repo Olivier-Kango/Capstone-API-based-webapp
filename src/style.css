@@ -5,7 +5,6 @@
 html,
 body {
   max-width: 100%;
-  overflow-x: hidden;
 }
 
 .first_flex {
@@ -31,6 +30,15 @@ header {
 header nav ul li {
   color: white;
   padding: 30px 0;
+}
+
+.identification-ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.identification-ul li {
+  list-style: none;
 }
 
 header nav ul li:nth-child(1) {
@@ -157,6 +165,8 @@ button {
 
 #modal {
   position: fixed;
+  overflow: auto;
+  max-height: 82vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0);
@@ -165,12 +175,14 @@ button {
   border-radius: 10px;
   z-index: 4;
   background: rgba(255, 255, 255, 0.703);
-  width: 80%;
+  width: 85%;
   padding: 10px 40px;
+  overflow-x: hidden;
 }
 
 #modal.active {
   transform: translate(-50%, -50%) scale(1);
+  overflow-x: hidden;
 }
 
 .close-button {
@@ -246,6 +258,20 @@ button {
   background: rgb(255, 0, 0);
 }
 
-.container {
-  z-index: -1;
+.photoApi {
+  display: block;
+  margin: 40px 35%;
+  width: 30%;
+  border: 6px double #421c0da8;
+  border-radius: 20px;
+}
+
+/* .details-section {
+
+} */
+
+.nameMeal {
+  text-align: center;
+  color: rgb(110, 54, 14);
+  font-size: 40px;
 }
