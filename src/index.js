@@ -59,7 +59,7 @@ fetch(url)
 
       const commentButton = document.createElement('button');
       commentButton.innerText = 'Comment';
-      commentButton.classList = 'commButton';
+      commentButton.classList = 'commentButton';
       commentButton.id = item.idMeal;
 
       container.append(image, box, id, commentButton);
