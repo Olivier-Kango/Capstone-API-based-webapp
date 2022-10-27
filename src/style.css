@@ -1,0 +1,335 @@
+* {
+  font-family: Arial, sans-serif;
+}
+
+html,
+body {
+  max-width: 100%;
+}
+
+.first_flex {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  font-size: 20px;
+  list-style-type: none;
+}
+
+.flex_display {
+  justify-content: space-around;
+}
+
+header {
+  background: #421c0dda;
+  color: white;
+  top: 0;
+  margin: 0;
+  width: 100%;
+}
+
+header nav ul li {
+  color: white;
+  padding: 30px 0;
+}
+
+.identification-ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.identification-ul li {
+  list-style: none;
+  font-size: 20px;
+}
+
+ul.comments li {
+  list-style: none;
+  padding: 10px 40px;
+}
+
+header nav ul li:nth-child(1) {
+  font-size: 50px;
+  padding: 0;
+  margin: 0;
+  height: min-content;
+  margin-bottom: 10px;
+}
+
+header nav ul li:hover {
+  color: yellow;
+  cursor: pointer;
+}
+
+footer p {
+  margin: 0;
+  color: white;
+  vertical-align: middle;
+  padding: 20px 40px;
+}
+
+footer p a {
+  color: rgb(255, 255, 255);
+}
+
+body {
+  margin: 0 auto;
+  background-image: url(./background-image.jpg);
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 50px;
+}
+
+nav {
+  font-size: 24px;
+}
+
+footer {
+  background: #421c0dda;
+  bottom: 0;
+  text-align: center;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.food-items {
+  margin: 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.photo {
+  max-width: 85vw;
+  border-radius: 12px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  margin-top: 30px;
+}
+
+.title {
+  font-size: 20px;
+  padding: 10px;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  background-color: whitesmoke;
+}
+
+.dont_display {
+  display: none;
+  background-color: red;
+}
+
+.title_box {
+  align-items: center;
+  height: 60px;
+}
+
+@media only screen and (min-width: 768px) {
+  .food-items {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .photo {
+    width: 24vw;
+    width: 365px;
+  }
+}
+
+/* POPUP */
+#overlay {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(30px);
+  background: rgba(66, 40, 1, 0.852);
+  pointer-events: none;
+  z-index: 2;
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+#modal {
+  position: fixed;
+  overflow: auto;
+  max-height: 82vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid #fff;
+  z-index: 4;
+  background: rgba(255, 255, 255, 0.703);
+  width: 85%;
+  padding: 10px 40px;
+  overflow-x: hidden;
+}
+
+#modal.active {
+  transform: translate(-50%, -50%) scale(1);
+  overflow-x: hidden;
+}
+
+.close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  color: rgba(66, 40, 1, 0.852);
+  font-size: 50px;
+  float: right;
+  margin: 0;
+}
+
+.commentButton {
+  cursor: pointer;
+  border: 2px solid #421c0d82;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.commentButton:hover {
+  background: rgba(228, 169, 126, 0.658);
+  box-shadow: 3px 3px 0 0;
+}
+
+#overlay:hover {
+  cursor: pointer;
+}
+
+/* LIKE BUTTON */
+.likeButton {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background-color: rgb(255, 255, 255);
+}
+
+.likeButton::before,
+.likeButton::after {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  content: '';
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+}
+
+.likeButton::before {
+  bottom: 0;
+  left: -10px;
+}
+
+.likeButton::after {
+  top: -10px;
+  right: 0;
+}
+
+.likeButton:hover,
+.likeButton:hover::before,
+.likeButton:hover::after {
+  cursor: pointer;
+  background: rgb(255, 255, 0);
+}
+
+.likeButton:active,
+.likeButton:active::before,
+.likeButton:active::after {
+  cursor: pointer;
+  background: rgb(255, 0, 0);
+}
+
+.photoApi {
+  display: block;
+  margin: 40px 35%;
+  width: 30%;
+  border: 6px double #421c0da8;
+  border-radius: 20px;
+}
+
+.nameMeal {
+  text-align: center;
+  color: rgb(110, 54, 14);
+  font-size: 40px;
+}
+
+.comments {
+  text-align: justify;
+}
+
+.title-comments {
+  text-align: center;
+  font-size: 30px;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 20%;
+}
+
+.username-input,
+.comments-input {
+  padding: 15px 30px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+}
+
+.comments-input {
+  margin: 0;
+  height: 100px;
+}
+
+.username-input:focus,
+.comments-input:focus {
+  outline: none;
+  border: none;
+}
+
+.btn-add-comments {
+  padding: 15px 20px;
+  border: none;
+  margin-bottom: 30px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-add-comments:hover {
+  background: rgba(245, 191, 152, 0.436);
+  box-shadow: 3px 3px 0 0;
+}
+
+.btn-add-comments:active {
+  background: rgba(210, 140, 89, 0.756);
+  box-shadow: 3px 3px 0 0;
+}
