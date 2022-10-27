@@ -16,8 +16,12 @@ const popupComment = () => {
   modal.appendChild(closeButton);
 
   closeButton.addEventListener('click', () => {
+    body.style.overflow = 'auto';
     overlay.classList.remove('active');
     modal.classList.remove('active');
+    setTimeout(() => {
+      modal.remove();
+    }, 1000);
   });
 };
 
