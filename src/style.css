@@ -209,6 +209,10 @@ button {
   box-shadow: 3px 3px 0 0;
 }
 
+#overlay:hover {
+  cursor: pointer;
+}
+
 /* LIKE BUTTON */
 .likeButton {
   position: relative;
