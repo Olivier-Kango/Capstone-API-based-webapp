@@ -23,6 +23,15 @@ const popupComment = () => {
       modal.remove();
     }, 1000);
   });
+
+  overlay.addEventListener('click', () => {
+    body.style.overflow = 'auto';
+    overlay.classList.remove('active');
+    modal.classList.remove('active');
+    setTimeout(() => {
+      modal.remove();
+    }, 1000);
+  });
 };
 
 export default popupComment;
