@@ -55,11 +55,6 @@ header nav ul li:nth-child(1) {
   margin-bottom: 10px;
 }
 
-header nav ul li:hover {
-  color: yellow;
-  cursor: pointer;
-}
-
 footer p {
   margin: 0;
   color: white;
@@ -152,7 +147,30 @@ button {
 
   .photo {
     width: 24vw;
-    width: 365px;
+  }
+}
+
+@media (max-width: 768px) {
+  header nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header nav ul li {
+    padding: 10px;
+  }
+
+  header nav ul li:nth-child(3) {
+    padding-bottom: 25px;
+  }
+
+  .photo {
+    width: 80%;
+  }
+
+  #form {
+    padding: 0;
   }
 }
 
@@ -334,4 +352,18 @@ button {
 .btn-add-comments:active {
   background: rgba(210, 140, 89, 0.756);
   box-shadow: 3px 3px 0 0;
+}
+
+/* SELECTOR ALPHBET */
+#select {
+  padding: 5px 15px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+#select option {
+  font-size: 20px;
 }
