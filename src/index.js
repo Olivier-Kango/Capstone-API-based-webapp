@@ -4,6 +4,8 @@ import commentsFromApi from './modules/api-comments.js';
 import counter from './modules/counter.js';
 import './favicon.ico';
 import select, { selectAlphabet } from './modules/select-alphabet.js';
+import './loading.gif';
+import loading, { noloading } from './modules/loading__.js';
 
 let local = 0;
 const storage = localStorage.getItem('selected');
@@ -110,3 +112,9 @@ select.addEventListener('change', selectAlphabet);
 if (localStorage.getItem('selected')) {
   document.getElementById(localStorage.getItem('selected')).selected = true;
 }
+
+loading();
+
+window.addEventListener('load', () => {
+  noloading();
+});
