@@ -5,7 +5,6 @@ import counter from './modules/counter.js';
 import './favicon.ico';
 
 const url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=e';
-// const url2 = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/EJtY0hlTmqQDHXVRck8E/likes/';
 const url2 = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/wIvcfoeCMowsKdAOdXJy/likes/';
 const section = document.querySelector('.food-items');
 
