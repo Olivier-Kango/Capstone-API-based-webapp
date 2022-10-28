@@ -101,5 +101,3 @@ select.addEventListener('change', selectAlphabet);
 if (localStorage.getItem('selected')) {
   document.getElementById(localStorage.getItem('selected')).selected = true;
 }
-
-console.log(selected);
