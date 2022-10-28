@@ -11,7 +11,7 @@ body {
 .first_flex {
   display: flex;
   justify-content: space-around;
-  padding: 0;
+  padding: 10px;
   font-size: 20px;
   list-style-type: none;
 }
@@ -75,7 +75,7 @@ body {
 ul {
   padding: 0;
   margin: 0;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 }
 
 nav {
@@ -96,9 +96,14 @@ footer {
   grid-template-columns: 1fr;
 }
 
+.food-items.none {
+  display: none;
+}
+
 .photo {
   max-width: 85vw;
   border-radius: 12px;
+  box-shadow: 10px 5px 5px #421c0dda;
 }
 
 .main-container {
@@ -237,9 +242,10 @@ button {
 
 .commentButton {
   cursor: pointer;
-  border: 2px solid #421c0d82;
+  border: none;
   padding-left: 20px;
   padding-right: 20px;
+  box-shadow: 10px 5px 5px #421c0dda;
 }
 
 .commentButton:hover {
@@ -383,4 +389,19 @@ button {
     margin: 40px 23%;
     width: 50%;
   }
+}
+
+/* LOADING */
+#cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: url(./loading.gif);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
 }
