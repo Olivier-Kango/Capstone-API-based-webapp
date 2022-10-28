@@ -5,6 +5,7 @@
 html,
 body {
   max-width: 100%;
+  overflow-x: hidden;
 }
 
 .first_flex {
@@ -44,7 +45,7 @@ header nav ul li {
 
 ul.comments li {
   list-style: none;
-  padding: 10px 40px;
+  padding: 10px 0;
 }
 
 header nav ul li:nth-child(1) {
@@ -148,6 +149,14 @@ button {
   .photo {
     width: 24vw;
   }
+
+  .photoApi {
+    display: block;
+    margin: 40px 32%;
+    width: 35%;
+    border: 6px double #421c0da8;
+    border-radius: 20px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -166,11 +175,12 @@ button {
   }
 
   .photo {
-    width: 80%;
+    width: 90%;
   }
 
   #form {
     padding: 0;
+    margin: 0;
   }
 }
 
@@ -204,7 +214,7 @@ button {
   border: 1px solid #fff;
   z-index: 4;
   background: rgba(255, 255, 255, 0.703);
-  width: 85%;
+  width: 70%;
   padding: 10px 40px;
   overflow-x: hidden;
 }
@@ -293,8 +303,8 @@ button {
 
 .photoApi {
   display: block;
-  margin: 40px 35%;
-  width: 30%;
+  margin: 40px 0;
+  width: 95%;
   border: 6px double #421c0da8;
   border-radius: 20px;
 }
@@ -314,7 +324,7 @@ button {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 0 20%;
+  padding: 0;
 }
 
 .username-input,
@@ -366,4 +376,11 @@ button {
 
 #select option {
   font-size: 20px;
+}
+
+@media only screen and (min-width: 800px) {
+  .photoApi {
+    margin: 40px 23%;
+    width: 50%;
+  }
 }
