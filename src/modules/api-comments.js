@@ -62,11 +62,11 @@ const commentsFromApi = async (idElement) => {
   buttonAddComments.setAttribute('type', 'button');
 
   const commentairesTitre = document.createElement('h3');
-  commentairesTitre.innerText = 'Comments()';
-  commentairesTitre.setAttribute('class', 'title-comments commentaires');
+  commentairesTitre.setAttribute('class', 'title-comments commentaires unique');
 
   const commentaires = document.createElement('ul');
   commentaires.setAttribute('class', 'comments commentaires');
+  commentaires.setAttribute('id', 'ul-for-count');
 
   ul.append(idMeal, category, origin);
   section.append(name, ul, instructionTitle, instruction, commentairesTitre,
