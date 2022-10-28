@@ -26,7 +26,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Video for explanation
 
-[<img width="942" alt="video capstone" src="https://user-images.githubusercontent.com/108806646/198344876-3e952dd9-585e-42bf-a5f5-920d219d2df9.png">](https://youtu.be/XTCxzxoz5sA)
+[<img width="942" alt="video capstone" src="https://user-images.githubusercontent.com/108806646/198344876-3e952dd9-585e-42bf-a5f5-920d219d2df9.png">](https://youtu.be/N22XlhllKkM)
 
 ### Prerequisites
 
