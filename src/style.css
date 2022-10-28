@@ -83,15 +83,21 @@ nav {
 footer {
   background: #421c0dda;
   bottom: 0;
+  left: 0;
   text-align: center;
   margin-top: 40px;
   width: 100%;
+}
+
+footer.foot {
+  position: absolute;
 }
 
 .food-items {
   margin: 24px;
   display: grid;
   grid-template-columns: 1fr;
+  min-height: 100vh;
 }
 
 .food-items.none {
