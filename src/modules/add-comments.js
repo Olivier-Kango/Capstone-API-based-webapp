@@ -1,4 +1,6 @@
 /* eslint-disable consistent-return */
+import counterComments from './counter-comments.js';
+
 const addComments = async (id) => {
   const yourName = document.querySelector('.username-input');
   const yourComment = document.querySelector('.comments-input');
@@ -25,8 +27,13 @@ export const getComments = async (id, ulComments) => {
   response.forEach((element) => {
     const contentList = `${element.creation_date} <strong>${element.username} </strong> <i>${element.comment}</i>`;
     const list = document.createElement('li');
+    list.setAttribute('class', 'li-for-counter');
     list.innerHTML = contentList;
     ulComments.appendChild(list);
+    const arr = ulComments.querySelectorAll('.li-for-counter');
+    const count = arr.length;
+    counterComments(count);
+    document.querySelector('.unique').innerHTML = `Comments (${count})`;
   });
 };
 
@@ -38,7 +45,11 @@ export const addCommentsLocally = (id, ulComments) => {
 
   if (yourName.value.length !== 0 && yourComment.value.length !== 0) {
     const list = document.createElement('li');
+    list.setAttribute('class', 'li-for-counter');
     list.innerHTML = `${today} <strong>${yourName.value} </strong> <i>${yourComment.value}</i>`;
     ulComments.appendChild(list);
+    const arr = ulComments.querySelectorAll('.li-for-counter');
+    const count = arr.length;
+    document.querySelector('.unique').innerHTML = `Comments (${count})`;
   }
 };
