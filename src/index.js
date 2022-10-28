@@ -5,8 +5,8 @@ import counter from './modules/counter.js';
 import './favicon.ico';
 import select, { selectAlphabet } from './modules/select-alphabet.js';
 
-const selected = select.options[localStorage.getItem('selected')].innerText;
-console.log(selected)
+const selecte = select.options[localStorage.getItem('selected')];
+const selected = selecte.innerText;
 const url = `https://www.themealdb.com/api/json/v1/1/search.php?f=${selected}`;
 const url2 = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/wIvcfoeCMowsKdAOdXJy/likes/';
 const section = document.querySelector('.food-items');
